@@ -1,14 +1,14 @@
-\contentsline {paragraph}{\CJKfamily {song}\fontsize {12pt}{\baselineskip }\selectfont \bfseries 关键词：}{3}{paragraph*.1}
-\contentsline {paragraph}{\CJKfamily {song}\fontsize {12pt}{\baselineskip }\selectfont \bfseries Key Words: }{4}{paragraph*.2}
-\contentsline {section}{\numberline {第一章}第一章}{1}{section.1}
-\contentsline {subsection}{\numberline {1.1}第一章第一小节}{1}{subsection.1.1}
-\contentsline {subsection}{\numberline {1.2}第一章第二小节}{1}{subsection.1.2}
-\contentsline {subsection}{\numberline {1.3}etc}{1}{subsection.1.3}
-\contentsline {section}{\numberline {第二章}第二章}{2}{section.2}
-\contentsline {subsection}{\numberline {2.1}第二章第一小节}{2}{subsection.2.1}
-\contentsline {subsubsection}{\numberline {2.1.1}第二章第一小节第三级标题}{2}{subsubsection.2.1.1}
-\contentsline {section}{\numberline {第三章}第三章}{3}{section.3}
-\contentsline {subsection}{\numberline {3.1}第三章第一小节}{3}{subsection.3.1}
-\contentsline {subsection}{\numberline {3.2}第三章第二小节}{3}{subsection.3.2}
-\contentsline {section}{致谢}{4}{section*.5}
-\contentsline {section}{参考文献}{5}{section*.6}
+\contentsline {paragraph}{\CJKfamily {song}\fontsize {12pt}{\baselineskip }\selectfont \bfseries Key Words: }{3}{paragraph*.1}%
+\contentsline {section}{\numberline {Chapter1}Introduction}{1}{section.1}%
+\contentsline {subsection}{\numberline {1.1}Background}{1}{subsection.1.1}%
+\contentsline {subsection}{\numberline {1.2}Instruction}{1}{subsection.1.2}%
+\contentsline {section}{\numberline {Chapter2}Template use method}{2}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Figure}{2}{subsection.2.1}%
+\contentsline {subsubsection}{\numberline {2.1.1}Insert a single graph}{2}{subsubsection.2.1.1}%
+\contentsline {subsubsection}{\numberline {2.1.2}Insert multiple graphs}{2}{subsubsection.2.1.2}%
+\contentsline {subsection}{\numberline {2.2}Table or Item}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Reference}{4}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Equation}{4}{subsection.2.4}%
+\contentsline {section}{\numberline {Chapter3}Conclusion}{6}{section.3}%
+\contentsline {section}{Acknowledgement}{6}{section*.5}%
+\contentsline {section}{References}{7}{section*.6}%

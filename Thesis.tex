@@ -3,34 +3,44 @@
 
 % -*- coding: UTF-8; -*-
 %!TEX encoding = UTF-8
-\documentclass[twoside]{CUGThesis}
+% !TeX program = xelatex
+\documentclass[twoside]{CUGCSthesis_EN}
 
-\title{论文题目} %论文题目
-\author{作者姓名} %作者姓名
-\date{\today} %日期，默认当日
-\school{院系名称} %院系名称
-\classnum{专业} %专业
-\stunum {学号} %学号
-\instructorone{某某某} %指导教师1姓名
-\instructoronelevel{副教授}
-\instructortwo{某某} %指导教师2姓名
-\instructortwolevel{副教授}
 
+% 隐藏链接
+
+
+\title{Your Title} %论文题目
+\author{Your Name} %作者姓名
+\date{May 15, 2024} %日期
+\school{School of Computer Science} %院系名称
+\classnum{Computer Science and Technology} %专业
+\stunum {xxxxxxxxxxx} %学号
+\instructorone{Prof.xxxx} %指导教师1姓名
+%\instructoronelevel{副教授}
+
+\usepackage{float}
 \usepackage{makecell}
 \usepackage{multicol}
 \usepackage{multirow}
-\usepackage{hyperref}
+\usepackage[backref]{hyperref}
+\hypersetup{
+hidelinks
+}
+
+\usepackage{color}
+
 
 \begin{document}
 	\maketitle
-	\makestatement
+	\makestatement\
+
+	% \begin{cnabstract}{关键词；关键词；关键词；关键词}
+	% 	摘要
+	% \end{cnabstract}
 	
-	\begin{cnabstract}{关键词；关键词；关键词；关键词}
-		摘要
-	\end{cnabstract}
-	
-	\begin{enabstract}{keyword; keyword; keyword; keyword}
-		abstract
+	\begin{enabstract}{keyword1; keyword2; keyword3; keyword4}
+		Abstract content
 	\end{enabstract}
 	
 	\makeToc
@@ -39,63 +49,95 @@
 	
 	%--------------------------------------------- 第一章 ---------------------------------------------
 	\begin{spacing}{2}
-		\section{第一章}
+		\section{Introduction}
 	\end{spacing}
-	引言
-	\subsection{第一章第一小节}
-	第一小节，引用实例\cite{引用}，按照格式填写mybib.bib
-	\subsection{第一章第二小节}
-	第二小节
-	\subsection{etc}
-	etc
+
+	\subsection{Background}
+	Dissertations range from more than 40 pages to more than 200 pages. If such a long paper is written in word, there will be many problems.
+	Many universities in foreign countries have their theses in \LaTeX templates, and most universities recommend that graduates write their theses in \LaTeX.
+	Although most universities in China do not recommend this, there are already many university graduates who make their own latex templates and 
+	share them on the Internet.
+
+	For the academic dissertation of China University of Geosciences (Wuhan), although there is no official latex template, many senior students 
+	have developed Chinese latex templates for academic dissertations, the English version is still missing.
+
+	\subsection{Instruction}
+	This template is based on the ThuThesis latex template, CUGThesis template and the standard for writing English bachelor's degree thesis of China 
+	University of Geosciences (Wuhan). It is mainly used for the English bachelor's degree thesis of the School of Computer Science, CUG.
+
+	And you can Refer to "一份（不太）简短的 \LaTeX 2ε 介绍" for more latex writing methods.
+
+
 	
 	
 	%------------------------------------------- 第二章 ---------------------------------------------
 	\begin{spacing}{2}
-		\section{第二章}
+		\section{Template use method}
 	\end{spacing}
-	第二章引言
-	\subsection{第二章第一小节}
-	第二章第一小节
-	\subsubsection{第二章第一小节第三级标题}
-	插图实例（图\ref{Fig:example}）
-	\begin{figure}[!t]
+	
+		\subsection{Figure}
+
+			\subsubsection{Insert a single graph}
+
+			Insert a single picture.
+
+			\begin{figure}[H]
+				\centering
+				\includegraphics[scale=0.5]{Figures/example.jpg}
+				\caption{Example1}
+				\label{Fig:example}
+			\end{figure}
+
+			\subsubsection{Insert multiple graphs}
+
+			It is often used to place multiple diagrams in a single float. The following is the schematic code, and the effect is roughly shown 
+			in Figure \ref{fig:figure_3col}.
+
+			\begin{verbatim}
+				\begin{figure}[htbp]
+					\centering
+					\includegraphics[width=...]{...}
+					\qquad
+					\includegraphics[width=...]{...} \\[...pt]
+					\includegraphics[width=...]{...}
+					\caption{...}
+				\end{figure}
+			\end{verbatim}
+
+			\begin{figure} [H]
+				\centering%
+				\subcaptionbox{logo1\label{fig:cug1} }  
+				{\includegraphics[height=0.45\textwidth]{Figures/CUG_Logo1}} 
+				\hspace{0.01\textwidth}  
+				\subcaptionbox{logo2\label{fig:cug2} }  
+				{\includegraphics[height=0.45\textwidth]{Figures/CUG_Logo2}} 
+				\caption{Example2} 
+				\label{fig:figure_3col} 
+			\end{figure} 
+		
+	\subsection{Table or Item}
+
+	The most basic tabular usage of tabular tables is as follows and the effect is roughly shown in Tab \ref{example:Tab}:
+	
+	\begin{verbatim}
+		\begin{tabular}[⟨align⟩]{⟨column-spec⟩}
+			⟨item1⟩ & ⟨item2⟩ & … \\
+			\hline
+			⟨item1⟩ & ⟨item2⟩ & … \\
+		\end{tabular}
+	\end{verbatim}
+
+	
+	\& is used to separate cells;  {\textbackslash \textbackslash} is used to wrap a line; {\textbackslash}\textit{hline} is used to draw horizontal lines between rows.
+
+	\begin{table}[H]
 		\centering
-		\includegraphics[scale=0.5]{Figures/example.jpg}
-		\caption{示例图}
-		\label{Fig:example}
-	\end{figure}
-	
-	
-	
-	%--------------------------------------------- 第三章 ---------------------------------------------
-	\begin{spacing}{2}
-		\section{第三章}
-	\end{spacing}
-	引言
-	\subsection{第三章第一小节}
-	开始列表
-	\begin{enumerate}
-		\item 条目1
-		
-		说明文字1
-		
-		\item 条目2
-		
-		说明文字2
-		
-		
-	\end{enumerate}
-	\subsection{第三章第二小节}
-	表示例（表\ref{Tab:test}）
-	\begin{table}[t]
-		\centering
-		\caption{表示例}
-		\label{Tab:test}
+		\caption{Example:Tab}
+		\label{example:Tab}
 		\scalebox{1.0}{
 			\begin{tabular}{ccc}
 				\toprule  %添加表格头部粗线
-				姓名& 学号& 性别\\
+				name & num & gender\\
 				\midrule  %添加表格中横线
 				Steve Jobs& 001& Male\\
 				Bill Gates& 002& Female\\
@@ -104,22 +146,76 @@
 		}
 		\vspace{10mm}
 	\end{table}
+
+	\LaTeX provides the basic ordered and unordered list environments enumerate and itemize, both of which are used similarly 
+	Label each list item with {\textbackslash}\textit{item}. The enumerate environment automatically numbers list items.
+
+	\begin{verbatim}
+		\begin{enumerate}
+			\item …
+			\item …
+		\end{enumerate}
+		
+	\end{verbatim}
+
+	\begin{enumerate}
+		\item item1
+		\item item2
+	\end{enumerate}
+
+	\subsection{Reference}
+
+	Cross-reference is one of the powerful automatic typesetting features of \LaTeX. In places that can be cross-referenced, such as chapters, public 
+	Formula, chart, theorem, etc. Use {\textbackslash}\textit{label} command:
+
+	You can then use the {\textbackslash}\textit{ref}\ or {\textbackslash}\textit{pageref} commands elsewhere to generate cross-referenced numbers 
+	and page numbers, respectively:
+
+	Reference a figure \ref{fig:cug1}
+
+	Reference a table \ref{example:Tab}
+
+	If you want to cite a reference, you1 need to format references into mybib.bib and cite it \cite{1}
+
+	\subsection{Equation}
+
+	Equations are created using the traditional equation environment:
+
+	\begin{equation}
+		\label{eqn_example}
+		x = \sum\limits_{i=0}^{z} 2^{i}Q
+	\end{equation}
+
+	A multiline equation
+	\begin{eqnarray}
+		Z&{}={}&x_1 + x_2 + x_3 + x_4 + x_5 + x_6\nonumber\\
+		&&+a + b\\
+		&&+{}a + b\\
+		&&{}+a + b\\
+		&&{+}\:a + b
+	\end{eqnarray}
 	
+	%--------------------------------------------- 第三章 ---------------------------------------------
+	\begin{spacing}{2}
+		\section{Conclusion}
+	\end{spacing}
+	
+	Conclusion of the article
 	
 	%---------------------------------------------  致谢  ---------------------------------------------
 	\begin{spacing}{2}
-		\section*{致谢}
+		\section*{Acknowledgement}
 	\end{spacing}
 	\phantomsection
-	\addcontentsline{toc}{section}{致谢}
+	\addcontentsline{toc}{section}{Acknowledgement}
 	
-	致谢
+	Content of acknowledgement
 	
 	\clearpage
 	%---------------------------------------------参考文献---------------------------------------------
 	
 	\bibliography{Bibs/mybib}
 	\phantomsection
-	\addcontentsline{toc}{section}{参考文献}
+	\addcontentsline{toc}{section}{References}
 	
 \end{document}

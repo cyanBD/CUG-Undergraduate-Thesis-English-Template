@@ -1,8 +1,8 @@
 %
 %	HustGraduPaper.sty
-%	本文件是华中科技大学本科生毕业论文模板、
-%	@author skinaze
-% 	@date 2017/03/01
+%	En Thesis template for sino-foreign cooperation project of CUG and iit
+%	@author cyan
+% 	@date 2024/04/01
 %	@version v1.0.0
 %
 %	本模板遵循MIT License
@@ -11,7 +11,7 @@
 
 %	---	定义的新的类
 \NeedsTeXFormat{LaTeX2e}
-\ProvidesClass{CUGThesis}[2018/05/18 Version 0.1 China University of Geosciences Thesis Template]
+\ProvidesClass{CUGCSthesis_EN}[China University of Geosciences Thesis Template]
 %\NeedsTeXFormat{LaTeX2e}
 
 
@@ -42,38 +42,21 @@
 
 \RequirePackage{enumitem}
 \RequirePackage{indentfirst}
-%------------------------------------------
-%\RequirePackage{cugthesisfont}
 
-%
-%	---	定义页边距
-%
-%\RequirePackage{geometry}
-%\geometry{left=3cm,right=3cm,top=2.5cm,bottom=2.0cm}
-%\geometry{headsep=1em,footskip=2em}
-%\geometry{headheight=14pt}
+
 
 \RequirePackage[a4paper,
     marginparwidth=0pt, marginparsep=0pt,
     top=3cm, bottom=3cm, left=3cm, right=3cm,
     headheight=2.5cm, headsep=10pt, footskip=2cm]{geometry}
+
 %
 %	---	定义字体
 %
-%\RequirePackage{cugthesisfont}
+
 \RequirePackage{xeCJK}
-%用于设置非常用字体
 \RequirePackage{fontspec}
-%论文封面使用华文中宋
-%\setCJKfamilyfont{song}{SimSun}                             %宋体 song
-%\newcommand{\song}{\CJKfamily{song}}
-%\RequirePackage{enumitem}
-%\RequirePackage{xeCJK}
-% 修改列表样式
-%\RequirePackage{cugthesisfont}
-%\usepackage[heading=true]{ctex}
-%\setCJKfamilyfont{song}{SimSun}
-                      %宋体 song
+
 \setCJKmainfont[
         BoldFont =SimHei,
         ItalicFont = STKaiti,
@@ -124,7 +107,7 @@
 \newcommand{\headstyle}{
 %中国地质大学（武汉）学士学位论文
 
-	\fancyhead[OC]{\wuhao\song 中国地质大学学士学位论文 }
+	\fancyhead[OC]{\wuhao\song Bachelor's thesis of China University of Geosciences }
 	\fancyhead[OR]{\wuhao\song \thepage}
 
 	\fancyhead[EC]{\wuhao\song \@author：\@title }
@@ -158,11 +141,10 @@
         %pagestyle=cug@pagestyle,
         aftername={\quad},
         format={\centering\sffamily\bfseries\sanhao\hei},
-       beforeskip={50pt},
+        beforeskip={50pt},
         afterskip={50pt},
         %parskip={2ex},
-        name={第,章},
-        number=\chinese{section}
+        name={Chapter},
         }
         } %节
 \newcommand{\sectionbreak}{\clearpage} %小节从新的一页开始
@@ -228,7 +210,7 @@
 %设置附录
 
 \RequirePackage[title,titletoc]{appendix}
-\renewcommand{\appendixname}{附录}
+\renewcommand{\appendixname}{Appendix}
 
 
 %	---	定义新的目录页面
@@ -237,7 +219,7 @@
 \tocloftpagestyle{empty}
 \renewcommand{\cfttoctitlefont}{\hei \sanhao \bfseries }
 %\renewcommand{\contentsname}{目录}
-\renewcommand{\contentsname}{\hspace*{\fill}目\quad 录\hspace*{\fill}}
+\renewcommand{\contentsname}{\hspace*{\fill}Contents\hspace*{\fill}}
 %\renewcommand{\cftaftertoctitle}{\hfill}
 \setlength{\cftbeforesecskip}{0pt}
 \setlength{\cftbeforesubsecskip}{0pt}
@@ -272,9 +254,12 @@
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+
 %重新设置图表autoref
-\newcommand{\figureautorefname}{图}
-\newcommand{\tableautorefname}{表}
+\newcommand{\figureautorefname}{Figure}
+\newcommand{\tableautorefname}{Table}
 
 %使用tabularx库并定义新的左右中格式
 \RequirePackage{tabularx}
@@ -351,73 +336,6 @@
 
 
 
-
-
-
-%%	---	设置图表格式
-%%
-%%设置图表标题的计数方式
-%\renewcommand{\thefigure}{\ifnum \c@section>\z@ \thesection-\fi \@arabic\c@figure}
-%\renewcommand{\thetable}{\ifnum \c@section>\z@ \thesection-\fi \@arabic\c@table}
-%
-%%设置标题的样式
-%\RequirePackage{caption}
-%\captionsetup{font={normalsize,bf,singlespacing}}
-%\captionsetup[figure]{position=bottom,skip={0pt}}
-%\captionsetup[table]{position=top,skip={0pt}}
-%\setlength{\textfloatsep}{0pt}
-%\setlength{\floatsep}{0pt}
-%\setlength{\intextsep}{6pt}
-%\setlength{\abovecaptionskip}{0pt}
-%\setlength{\belowcaptionskip}{0pt}
-%
-%%重新设置图表autoref
-%%\newcommand{\figureautorefname}{图}
-%%\newcommand{\tableautorefname}{表}
-%
-%%使用tabularx库并定义新的左右中格式
-%\RequirePackage{tabularx}
-%\RequirePackage{makecell}
-%\newcolumntype{L}{X}
-%\newcolumntype{C}{>{\centering \arraybackslash}X}
-%\newcolumntype{R}{>{\raggedright \arraybackslash}X}
-%
-%%添加复杂的表格需求库
-%\RequirePackage{booktabs}
-%%设置三线表格式
-%\setlength{\heavyrulewidth}{1.5pt}
-%\setlength{\lightrulewidth}{0.5pt}
-%\setlength{\cmidrulewidth}{0.5pt}
-%\setlength{\aboverulesep}{0pt}
-%\setlength{\belowrulesep}{0pt}
-%\setlength{\abovetopsep}{0pt}
-%\setlength{\belowbottomsep}{0pt}
-%
-%%添加图需要的库
-%\RequirePackage{graphicx}
-%
-%%重新定义图和表的浮动环境，使其方便使用
-%%\newenvironment{generalfig}[3][htbp]{
-%%	\def \figcaption {#2}
-%%	\def \figlabel {#3}
-%%	\begin{figure}[#1]
-%%		\centering
-%%	}{
-%%		\caption{\figcaption} \label{\figlabel}
-%%	\end{figure}
-%%}
-%%\newenvironment{generaltab}[3][htbp]{
-%%	\def \tabcaption {#2}
-%%	\def \tablabel {#3}
-%%	\begin{table}[#1]
-%%		\caption{\tabcaption} \label{\tablabel}
-%%		\zihao{5}
-%%		\centering
-%%	}{
-%%	\end{table}
-%%}
-
-
 %
 %	---	设置公式格式
 %
@@ -480,29 +398,24 @@
 		%	\vspace*{4em}
 		%	\includegraphics[height=1.61cm]{\logopic}\\
 			\vspace*{42.2825pt}
-			{\yihao \song \bfseries 学士学位论文}\\
+			{\sanhao A Dissertation Submitted to China University of Geosciences
+			For the Bachelor Degree of Computer Science and Technology}\\
 			\vspace{62.6825pt}
 			{\erhao \hei \bfseries \@title}\\
 			\vspace{6em}
-			{\sanhao \song \bfseries
+			{\sanhao \song 
 				\renewcommand\arraystretch{1}
 				\hspace*{4em}
-				\begin{tabular}{lc}
-					\makebox[6em][s]{学\ \ \ \ 号:} &
-					\makebox[#1][l]{\quad\defstunum} \\
-					\makebox[6em][s]{姓\ \ \ \ 名:} &
-					\makebox[#1][l]{\quad\@author} \\
-					\makebox[6em][s]{学 \ 科 \ 专 \ 业:} &
-					\makebox[#1][l]{\quad\defclassnum} \\
-					\makebox[6em][s]{指 \ 导 \ 教 \ 师:} &
-					\makebox[#1][l]{\quad\definstructorone \  \definstructoronelevel} \\
-					\makebox[6em][s]{ } &
-					\makebox[#1][l]{\quad\definstructortwo \quad\ \definstructortwolevel} \\
-					\makebox[6em][s]{培 \ 养 \ 单 \ 位:} &
-					\makebox[#1][l]{\quad\defschool} \\
+				\centering
+				\begin{tabular}{cc}
+					\makebox[7em][l]{Student\ Number:} & \makebox[#1][l]{\defstunum} \\
+					\makebox[7em][l]{Student\ Name:} & \makebox[#1][l]{\@author} \\
+					\makebox[7em][l]{Major:} & \makebox[#1][l]{\defclassnum} \\
+					\makebox[7em][l]{Tutor:} & \makebox[#1][l]{ \definstructorone} \\
+					\makebox[7em][l]{Faculty:} & \makebox[#1][l]{\defschool} \\
 			\end{tabular}}\\
 			\vspace{6em}
-			{\sanhao \zhdigits{2018}年\zhdigits{5}月}\\
+			{\sanhao \@date}\\
 		\end{center}
 	\end{titlepage}
 }
@@ -515,28 +428,26 @@
 	\vspace*{1em}
 	\begin{center}
 \begin{spacing}{1.25}{
-		\hei \sanhao
-		中国地质大学（武汉）学士学位论文原创性声明
+		\hei \bfseries \sanhao Statement of originality of bachelor's thesis of China University of Geosciences
 }
 \end{spacing}
 	\end{center}
 
 
  %\@title
- \song \sihao
+\sihao
 
-本人郑重声明：本人所呈交的学士学位论文《\@title》，是本人在指导老师的指导下，在中国地质大学（武汉）攻读学士学位期间独立进行研究工作所取得的成果。
-论文中除已注明部分外不包含他人已发表或撰写过的研究成果，对论文的完成提供过帮助的有关人员已在文中说明并致以谢意。
+ I declare that my bachelor's thesis "\@title" is the result of my independent research work during my bachelor's degree study period at China University of Geosciences (Wuhan) under the guidance of my tutor. The paper does not contain the research results that have been published or written by others, except for the parts already indicated, and the relevant personnel who have provided assistance in the completion of the thesis have been mentioned and thanked in this thesis.
 
-本人所呈交的学士学位论文没有违反学术道德和学术规范，没有侵权行为，并愿意承担由此而产生的法律责任和法律后果。\\
+ This bachelor's thesis does not violate academic ethics and academic norms, has no infringement, and I am willing to undertake the legal responsibility and legal consequences arising therefrom.\\
 
 	\begin{spacing}{1}
 	\rightline{
-	\begin{tabular}{r}
+	\begin{tabular}{rr}
 		\\
-		学位论文作者签名：\uline{\makebox[6em]{}}\\
+		\makebox[8.1em][l]{Dissertation author:\ } & \makebox[6em]{\underline{\hspace{8em}}}\\
 		\\
-		日期： \hspace{4em}年 \hspace{2em} 月 \hspace{2em} 日
+		Date: \@date
 	\end{tabular}
 	}
 	\end{spacing}
@@ -558,6 +469,7 @@
 % 参考文献
 \RequirePackage[sort&compress]{natbib}
 \bibliographystyle{gbt7714-2005}
+\renewcommand{\refname}{References}
 \bibpunct{[}{]}{;}{s}{}{;}
 %--------------- Source Code ---------------
 \endinput
