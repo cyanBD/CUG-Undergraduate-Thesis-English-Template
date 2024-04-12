@@ -6,8 +6,10 @@ This template is based on the ThuThesis latex template, CUGThesis template and t
 
 ## 1. TeX Live download and installation
 
-[Dowload](https://tug.org/texlive/acquire-iso.html)
+
 Go to the ISO download page, click download from a nearby CTAN mirror to download;
+
+[Dowload](https://tug.org/texlive/acquire-iso.html)
 
 After the download is complete, unzip the file, and find the "install-tl-windows" file. For unnecessary trouble later, you can right click and run as administrator. We use vscode as the editor for LaTeX, so uncheck the option to install the TeXworks front end and click Install.
 
