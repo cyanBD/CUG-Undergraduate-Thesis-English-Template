@@ -58,19 +58,18 @@
 \RequirePackage{fontspec}
 
 \setCJKmainfont[
-        BoldFont =SimHei,
-        ItalicFont = STKaiti,
-        %BoldItalicFont = STKaiti-SC-Bold,
-    ]{SimSun}
+        BoldFont =simhei.ttf,
+        ItalicFont = STKAITI.TTF,
+    ]{simsun.ttc}
 \setCJKsansfont[
-    BoldFont = SimHei,
-    ]{SimSun}
+    BoldFont = simhei.ttf,
+    ]{simsun.ttc}
 \setCJKmonofont[
-    BoldFont = SimHei,
-   ]{SimSun}
+    BoldFont = simhei.ttf,
+   ]{simsun.ttc}
 
-\setCJKfamilyfont{song}{SimSun}
-\setCJKfamilyfont{hei}{SimHei}
+\setCJKfamilyfont{song}{simsun.ttc}
+\setCJKfamilyfont{hei}{simhei.ttf}
 \newcommand{\song}{\CJKfamily{song}}    % 宋体   (Windows自带simsun.ttf)
 \newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (Windows自带simhei.ttf)
 
@@ -107,11 +106,11 @@
 \newcommand{\headstyle}{
 %中国地质大学（武汉）学士学位论文
 
-	\fancyhead[OC]{\wuhao\song Bachelor's thesis of China University of Geosciences }
-	\fancyhead[OR]{\wuhao\song \thepage}
+	\fancyhead[OC]{\wuhao Bachelor's thesis of China University of Geosciences }
+	\fancyhead[OR]{\wuhao \thepage}
 
-	\fancyhead[EC]{\wuhao\song \@author：\@title }
-	\fancyhead[EL]{\wuhao\song \thepage}
+	\fancyhead[EC]{\wuhao \@author：\@title }
+	\fancyhead[EL]{\wuhao \thepage}
 
 }
 
