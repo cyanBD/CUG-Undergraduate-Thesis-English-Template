@@ -16,7 +16,6 @@
 
 
 
-
 %
 %	---	载入Class
 %
@@ -29,7 +28,7 @@
 %%%%%%%%%%%%%%%%%%%%%%% Load Packages %%%%%%%%%%%%%%%%%%%%%%
 %页面基本设置
 \RequirePackage[boldfont,slantfont]{xeCJK}
-\RequirePackage[cs4size,UTF8,winfonts,heading=true]{ctex}
+\RequirePackage[cs4size,UTF8,heading=true]{ctex}
 \RequirePackage{xifthen, xparse, xstring, fancyhdr, etoolbox}
 
 \RequirePackage{amstext, amsmath, amssymb, amsfonts}
@@ -42,20 +41,40 @@
 
 \RequirePackage{enumitem}
 \RequirePackage{indentfirst}
+\usepackage{ulem}
+\usepackage{setspace}
+%------------------------------------------
+%\RequirePackage{cugthesisfont}
 
-
+%
+%	---	定义页边距
+%
+%\RequirePackage{geometry}
+%\geometry{left=3cm,right=3cm,top=2.5cm,bottom=2.0cm}
+%\geometry{headsep=1em,footskip=2em}
+%\geometry{headheight=14pt}
 
 \RequirePackage[a4paper,
     marginparwidth=0pt, marginparsep=0pt,
     top=3cm, bottom=3cm, left=3cm, right=3cm,
     headheight=2.5cm, headsep=10pt, footskip=2cm]{geometry}
-
 %
 %	---	定义字体
 %
-
+%\RequirePackage{cugthesisfont}
 \RequirePackage{xeCJK}
+%用于设置非常用字体
 \RequirePackage{fontspec}
+%论文封面使用华文中宋
+%\setCJKfamilyfont{song}{SimSun}                             %宋体 song
+%\newcommand{\song}{\CJKfamily{song}}
+%\RequirePackage{enumitem}
+%\RequirePackage{xeCJK}
+% 修改列表样式
+%\RequirePackage{cugthesisfont}
+%\usepackage[heading=true]{ctex}
+%\setCJKfamilyfont{song}{SimSun}
+                      %宋体 song
 
 \setCJKmainfont[
         BoldFont =simhei.ttf,
@@ -71,9 +90,9 @@
 \setCJKfamilyfont{song}{simsun.ttc}
 \setCJKfamilyfont{hei}{simhei.ttf}
 \newcommand{\song}{\CJKfamily{song}}    % 宋体   (Windows自带simsun.ttf)
-\newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (Windows自带simhei.ttf)
+\newcommand{\hei}{\CJKfamily{hei}}      % 黑体   (Windows自带simhei.ttf.ttf)
 
-%\setCJKmainfont[BoldFont=SimHei,ItalicFont=KaiTi]{SimSun}
+%\setCJKmainfont[BoldFont=simhei.ttf,ItalicFont=KaiTi]{SimSun}
 \setmainfont[
     ItalicFont = {Times New Roman Italic},
     BoldFont = {Times New Roman Bold},
@@ -97,7 +116,7 @@
 %	---	定义页眉页脚
 %
 %定义1.5倍行距
-%\renewcommand{\baselinestretch}{1.2}
+\renewcommand{\baselinestretch}{1.2}
 
 %使用fancyhdr库
 \RequirePackage{fancyhdr}
@@ -109,10 +128,11 @@
 	\fancyhead[OC]{\wuhao Bachelor's thesis of China University of Geosciences }
 	\fancyhead[OR]{\wuhao \thepage}
 
-	\fancyhead[EC]{\wuhao \@author：\@title }
+	\fancyhead[EC]{\wuhao \@author: \@title }
 	\fancyhead[EL]{\wuhao \thepage}
 
 }
+
 
 
 %设置页脚样式
@@ -182,7 +202,7 @@
 	\thispagestyle{empty}
 	%\phantomsection
 	%\addcontentsline{toc}{section}{摘要}
-	\begin{center} \hei \bfseries \sanhao 摘 \hspace{2em} 要 \end{center}
+	\begin{center} \hei \bfseries \xiaoerhao 摘 \hspace{2em} 要 \end{center}
 	
 }{
 	\vspace{1em}
@@ -197,7 +217,7 @@
 	\thispagestyle{empty}
 	%\phantomsection
 	%\addcontentsline{toc}{section}{Abstract}
-	\begin{center} \bfseries \sanhao Abstract \end{center}
+	\begin{center} \bfseries \xiaoerhao Abstract \end{center}
 	
 }{
 	\vspace{1em}
@@ -209,7 +229,7 @@
 %设置附录
 
 \RequirePackage[title,titletoc]{appendix}
-\renewcommand{\appendixname}{Appendix}
+\renewcommand{\appendixname}{附录}
 
 
 %	---	定义新的目录页面
@@ -218,7 +238,7 @@
 \tocloftpagestyle{empty}
 \renewcommand{\cfttoctitlefont}{\hei \sanhao \bfseries }
 %\renewcommand{\contentsname}{目录}
-\renewcommand{\contentsname}{\hspace*{\fill}Contents\hspace*{\fill}}
+\renewcommand{\contentsname}{\hspace*{\fill}目\quad 录\hspace*{\fill}}
 %\renewcommand{\cftaftertoctitle}{\hfill}
 \setlength{\cftbeforesecskip}{0pt}
 \setlength{\cftbeforesubsecskip}{0pt}
@@ -253,12 +273,14 @@
 \setlength{\abovecaptionskip}{0pt}
 \setlength{\belowcaptionskip}{0pt}
 
-\renewcommand{\figurename}{Figure}
-\renewcommand{\tablename}{Table}
-
 %重新设置图表autoref
 \newcommand{\figureautorefname}{Figure}
 \newcommand{\tableautorefname}{Table}
+
+
+\renewcommand{\figurename}{Figure}
+\renewcommand{\tablename}{Table}
+
 
 %使用tabularx库并定义新的左右中格式
 \RequirePackage{tabularx}
@@ -323,7 +345,7 @@
 \numberwithin{equation}{section}
 
 %重新设置公式autoref
-\newcommand{\equationautorefname}{等式}
+\newcommand{\equationautorefname}{Eq.}
 
 
 %
@@ -333,6 +355,73 @@
 \setenumerate{fullwidth,itemindent=\parindent,listparindent=\parindent,itemsep=0ex,partopsep=0pt,parsep=0ex}
 \setlist{noitemsep}
 
+
+
+
+
+
+%%	---	设置图表格式
+%%
+%%设置图表标题的计数方式
+%\renewcommand{\thefigure}{\ifnum \c@section>\z@ \thesection-\fi \@arabic\c@figure}
+%\renewcommand{\thetable}{\ifnum \c@section>\z@ \thesection-\fi \@arabic\c@table}
+%
+%%设置标题的样式
+%\RequirePackage{caption}
+%\captionsetup{font={normalsize,bf,singlespacing}}
+%\captionsetup[figure]{position=bottom,skip={0pt}}
+%\captionsetup[table]{position=top,skip={0pt}}
+%\setlength{\textfloatsep}{0pt}
+%\setlength{\floatsep}{0pt}
+%\setlength{\intextsep}{6pt}
+%\setlength{\abovecaptionskip}{0pt}
+%\setlength{\belowcaptionskip}{0pt}
+%
+%%重新设置图表autoref
+%%\newcommand{\figureautorefname}{图}
+%%\newcommand{\tableautorefname}{表}
+%
+%%使用tabularx库并定义新的左右中格式
+%\RequirePackage{tabularx}
+%\RequirePackage{makecell}
+%\newcolumntype{L}{X}
+%\newcolumntype{C}{>{\centering \arraybackslash}X}
+%\newcolumntype{R}{>{\raggedright \arraybackslash}X}
+%
+%%添加复杂的表格需求库
+%\RequirePackage{booktabs}
+%%设置三线表格式
+%\setlength{\heavyrulewidth}{1.5pt}
+%\setlength{\lightrulewidth}{0.5pt}
+%\setlength{\cmidrulewidth}{0.5pt}
+%\setlength{\aboverulesep}{0pt}
+%\setlength{\belowrulesep}{0pt}
+%\setlength{\abovetopsep}{0pt}
+%\setlength{\belowbottomsep}{0pt}
+%
+%%添加图需要的库
+%\RequirePackage{graphicx}
+%
+%%重新定义图和表的浮动环境，使其方便使用
+%%\newenvironment{generalfig}[3][htbp]{
+%%	\def \figcaption {#2}
+%%	\def \figlabel {#3}
+%%	\begin{figure}[#1]
+%%		\centering
+%%	}{
+%%		\caption{\figcaption} \label{\figlabel}
+%%	\end{figure}
+%%}
+%%\newenvironment{generaltab}[3][htbp]{
+%%	\def \tabcaption {#2}
+%%	\def \tablabel {#3}
+%%	\begin{table}[#1]
+%%		\caption{\tabcaption} \label{\tablabel}
+%%		\zihao{5}
+%%		\centering
+%%	}{
+%%	\end{table}
+%%}
 
 
 %
@@ -350,11 +439,11 @@
 	\setlength{\belowdisplayshortskip}{0pt}
 }
 
-%公式编号带章节
-\numberwithin{equation}{section}
+% %公式编号带章节
+% \numberwithin{equation}{section}
 
 %重新设置公式autoref
-%\newcommand{\equationautorefname}{等式}
+% \newcommand{\equationautorefname}{等式}
 
 
 %-------------------------封面制作---------------------------
@@ -387,9 +476,6 @@
 \RequirePackage{enumitem}
 \setlist{noitemsep}
 
-
-
-%重置命令maketitle
 \renewcommand{\maketitle}[1][12em]{
 	\begin{titlepage}
      \centering
@@ -421,6 +507,8 @@
 
 \RequirePackage{setspace}
 %设置命令
+\RequirePackage{setspace}
+%设置命令
 \newcommand{\makestatement}[2][0]{
 	\clearpage
 	\thispagestyle{empty}
@@ -450,7 +538,6 @@
 	\end{tabular}
 	}
 	\end{spacing}
-	
 	\clearpage
 }
 
