@@ -238,7 +238,7 @@
 \tocloftpagestyle{empty}
 \renewcommand{\cfttoctitlefont}{\hei \sanhao \bfseries }
 %\renewcommand{\contentsname}{目录}
-\renewcommand{\contentsname}{\hspace*{\fill}目\quad 录\hspace*{\fill}}
+\renewcommand{\contentsname}{\hspace*{\fill}Contents\hspace*{\fill}}
 %\renewcommand{\cftaftertoctitle}{\hfill}
 \setlength{\cftbeforesecskip}{0pt}
 \setlength{\cftbeforesubsecskip}{0pt}
