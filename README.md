@@ -160,4 +160,7 @@ Open the LaTeX environment Settings page.
 Before you start writing, it is recommended to copy or rename `CUGThesis.pdf` to some other meaningful name.
 
 On-line editing:
-- [overleaf template]()
+overleaf: 
+- New Project
+- Upload zip file
+- You need to change the **compiler** to **XeLateX** in the **menu** before using it 
