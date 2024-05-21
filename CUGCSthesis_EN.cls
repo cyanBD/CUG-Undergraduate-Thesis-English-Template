@@ -521,27 +521,25 @@
 	\end{center}
 
 
+\begin{spacing}{1.5}
  %\@title
-\sihao
+\sihao 
 
  I declare that my bachelor's thesis "\@title" is the result of my independent research work during my bachelor's degree study period at China University of Geosciences (Wuhan) under the guidance of my tutor. The paper does not contain the research results that have been published or written by others, except for the parts already indicated, and the relevant personnel who have provided assistance in the completion of the thesis have been mentioned and thanked in this thesis.
 
- This bachelor's thesis does not violate academic ethics and academic norms, has no infringement, and I am willing to undertake the legal responsibility and legal consequences arising therefrom.\\
+This bachelor's thesis does not violate academic ethics and academic norms, has no infringement, and I am willing to undertake the legal responsibility and legal consequences arising therefrom.\\
 
-	\begin{spacing}{1}
+	
 	\rightline{
 	\begin{tabular}{rr}
 		\\
 		\makebox[8.1em][l]{Dissertation author:\ } & \makebox[6em]{\underline{\hspace{8em}}}\\
-		\\
 		Date: \@date
 	\end{tabular}
 	}
 	\end{spacing}
 	\clearpage
 }
-
-
 
 \newcommand{\makeToc}{%
 \pagestyle{empty}
