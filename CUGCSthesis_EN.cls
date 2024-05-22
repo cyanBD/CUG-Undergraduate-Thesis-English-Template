@@ -116,7 +116,8 @@
 %	---	定义页眉页脚
 %
 %定义1.5倍行距
-\renewcommand{\baselinestretch}{1.2}
+%\renewcommand{\baselinestretch}{1.2}
+\setlength{\baselineskip}{20pt}
 
 %使用fancyhdr库
 \RequirePackage{fancyhdr}
