@@ -497,7 +497,7 @@
 					\makebox[7em][l]{Student\ Number:} & \makebox[#1][l]{\defstunum} \\
 					\makebox[7em][l]{Student\ Name:} & \makebox[#1][l]{\@author} \\
 					\makebox[7em][l]{Major:} & \makebox[#1][l]{\defclassnum} \\
-					\makebox[7em][l]{Tutor:} & \makebox[#1][l]{ \definstructorone} \\
+					\makebox[7em][l]{Tutor:} & \makebox[#1][l]{\definstructorone} \\
 					\makebox[7em][l]{Faculty:} & \makebox[#1][l]{\defschool} \\
 			\end{tabular}}\\
 			\vspace{6em}
