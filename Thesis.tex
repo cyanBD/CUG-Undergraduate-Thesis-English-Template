@@ -23,7 +23,14 @@
 \usepackage{makecell}
 \usepackage{multicol}
 \usepackage{multirow}
-\usepackage[backref]{hyperref}
+% \usepackage[backref]{hyperref}
+\usepackage[hypertexnames=false]{hyperref}
+\hypersetup{
+    bookmarks=false, % Prevent the creation of bookmarks in the PDF
+    colorlinks=false, % Disable colored links
+    pdfborder={0 0 0}, % Remove border around links
+    hidelinks
+}
 \hypersetup{
 hidelinks
 }
